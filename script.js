@@ -47,7 +47,7 @@
 
   function renderMediaCard(item, label) {
     return `
-      <a class="detail-card ${item.type === 'video' ? 'is-video' : ''}" href="${item.src}" data-type="${item.type}">
+      <a class="detail-card is-loading ${item.type === 'video' ? 'is-video' : ''}" href="${item.src}" data-type="${item.type}">
         ${item.type === 'video'
           ? `<video src="${item.src}" muted playsinline preload="metadata"></video>`
           : `<img src="${item.src}" alt="${item.title}" loading="lazy" decoding="async">`}
@@ -96,8 +96,42 @@
       video.addEventListener('loadedmetadata', seekPreviewFrame, { once: true });
       video.addEventListener('seeked', () => {
         video.dataset.posterReady = 'true';
+        video.closest('.detail-card')?.classList.remove('is-loading');
       }, { once: true });
       if (video.readyState >= 1) seekPreviewFrame();
+    });
+  }
+
+  function setupMediaSkeletons(root = gallery) {
+    root.querySelectorAll('.detail-card img').forEach((image) => {
+      const card = image.closest('.detail-card');
+      if (!card) return;
+      if (image.complete && image.naturalWidth > 0) {
+        card.classList.remove('is-loading');
+        return;
+      }
+      image.addEventListener('load', () => {
+        card.classList.remove('is-loading');
+      }, { once: true });
+      image.addEventListener('error', () => {
+        card.classList.remove('is-loading');
+        card.classList.add('is-error');
+      }, { once: true });
+    });
+
+    root.querySelectorAll('.detail-card video').forEach((video) => {
+      const card = video.closest('.detail-card');
+      if (!card) return;
+      if (video.readyState >= 2 || video.dataset.posterReady === 'true') {
+        card.classList.remove('is-loading');
+      }
+      video.addEventListener('loadeddata', () => {
+        card.classList.remove('is-loading');
+      }, { once: true });
+      video.addEventListener('error', () => {
+        card.classList.remove('is-loading');
+        card.classList.add('is-error');
+      }, { once: true });
     });
   }
 
@@ -258,6 +292,7 @@
           const panel = wrapper.firstElementChild;
           loadingPanel.replaceWith(panel);
           setupVideoPosters(panel);
+          setupMediaSkeletons(panel);
         });
       }
       entry.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -275,13 +310,16 @@
       const moduleIndex = Number(article.querySelector('.module-entry').dataset.moduleIndex);
       const wrapper = document.createElement('div');
       wrapper.innerHTML = renderModuleContent(window.galleryData[moduleIndex]);
-      panel.replaceWith(wrapper.firstElementChild);
-      setupVideoPosters(wrapper.firstElementChild);
+      const nextPanel = wrapper.firstElementChild;
+      panel.replaceWith(nextPanel);
+      setupVideoPosters(nextPanel);
+      setupMediaSkeletons(nextPanel);
     }
   });
 
   renderEntry();
   setupVideoPosters();
+  setupMediaSkeletons();
 }
 
 function setupLightbox() {
@@ -432,9 +470,11 @@ function setupSkillsReveal() {
   const skills = document.querySelector('.skills');
   if (!skills || !('IntersectionObserver' in window)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  skills.querySelectorAll('li').forEach((li, index) => {
-    li.style.transitionDelay = `${Math.min(index, 12) * 0.06}s`;
-  });
+  if (skills.querySelector('ul')?.dataset.marqueeReady !== 'true') {
+    skills.querySelectorAll('li').forEach((li, index) => {
+      li.style.transitionDelay = `${Math.min(index, 12) * 0.06}s`;
+    });
+  }
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -444,6 +484,41 @@ function setupSkillsReveal() {
     });
   }, { threshold: 0.2 });
   io.observe(skills);
+}
+
+function setupSkillsMarquee() {
+  if (!window.matchMedia('(max-width: 900px)').matches) return;
+  const list = document.querySelector('.skills ul');
+  if (!list || list.dataset.marqueeReady === 'true') return;
+
+  const items = [...list.children];
+  if (!items.length) return;
+
+  const rows = [document.createElement('li'), document.createElement('li')];
+  rows.forEach((row, index) => {
+    row.className = `skills-marquee-row ${index === 0 ? 'is-forward' : 'is-reverse'}`;
+    row.setAttribute('aria-hidden', 'true');
+  });
+
+  const rowItems = [items, items];
+  rowItems.forEach((group, rowIndex) => {
+    const track = document.createElement('div');
+    track.className = 'skills-marquee-track';
+    [0, 1].forEach(() => {
+      const segment = document.createElement('div');
+      segment.className = 'skills-marquee-segment';
+      group.forEach((item) => {
+        const pill = document.createElement('span');
+        pill.textContent = item.textContent;
+        segment.appendChild(pill);
+      });
+      track.appendChild(segment);
+    });
+    rows[rowIndex].appendChild(track);
+  });
+
+  list.replaceChildren(...rows);
+  list.dataset.marqueeReady = 'true';
 }
 
 function setupHeroParallax() {
@@ -556,9 +631,9 @@ setupLightbox();
 setupReveal();
 setupScrollProgress();
 setupBackToTop();
+setupSkillsMarquee();
 setupSkillsReveal();
 setupHeroParallax();
 setupCursorGlow();
 setupCountUp();
 setupMagnetic();
-
