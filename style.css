@@ -556,9 +556,10 @@ a { color: inherit; }
 }
 .module-entry strong {
   margin-top: clamp(72px, 7vw, 134px);
-  font-size: clamp(38px, 5vw, 96px);
+  font-size: clamp(34px, 4.35vw, 82px);
   line-height: 1;
   font-weight: 900;
+  white-space: nowrap;
 }
 .module-entry small {
   margin-top: 14px;
@@ -838,6 +839,12 @@ a { color: inherit; }
   width: 100%;
   margin: 0 auto;
   text-align: left;
+}
+.detail-waterfall-column {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: clamp(20px, 2vw, 38px);
 }
 .module-group {
   display: flex;
@@ -1717,34 +1724,15 @@ body::before {
   contain-intrinsic-size: 760px;
 }
 
-.load-more {
-  display: block;
-  min-height: 44px;
-  margin: 22px auto 0;
-  padding: 0 22px;
-  border: 1px solid rgba(255, 255, 255, .14);
-  border-radius: 999px;
-  background: rgba(30, 22, 46, .72);
-  color: #fff;
-  font: inherit;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  backdrop-filter: blur(12px);
-  transition: border-color .2s ease, background .2s ease, transform .2s ease;
-}
-
-.load-more:hover {
-  border-color: rgba(255, 255, 255, .34);
-  background: rgba(91, 45, 194, .76);
-  transform: translateY(-1px);
-}
-
 .module-panel .detail-waterfall,
 .railia-case-section .detail-waterfall {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start;
+  gap: clamp(18px, 1.8vw, 34px);
+}
+
+.module-panel .detail-waterfall-column,
+.railia-case-section .detail-waterfall-column {
   gap: clamp(18px, 1.8vw, 34px);
 }
 
@@ -1772,13 +1760,6 @@ body::before {
 .railia-case-section .detail-waterfall .detail-card video {
   height: auto;
   aspect-ratio: 16 / 9;
-}
-
-@media (max-width: 1200px) {
-  .module-panel .detail-waterfall,
-  .railia-case-section .detail-waterfall {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 900px) {
@@ -1874,14 +1855,14 @@ body::before {
     font-size: clamp(38px, 10vw, 64px);
   }
 
-  .load-more {
-    min-height: 40px;
-    padding: 0 16px;
-  }
-
   .module-panel .detail-waterfall,
   .railia-case-section .detail-waterfall {
     grid-template-columns: 1fr;
+  }
+
+  .module-panel .detail-waterfall-column,
+  .railia-case-section .detail-waterfall-column {
+    display: flex;
   }
 }
 
@@ -2513,6 +2494,7 @@ body::before {
 .module-entry strong {
   max-width: min(68vw, 940px);
   font-weight: 500;
+  white-space: nowrap;
   text-shadow: 0 16px 46px rgba(0,0,0,.62);
 }
 
@@ -2520,8 +2502,7 @@ body::before {
   color: rgba(255,255,255,.58);
 }
 
-.module-entry b,
-.load-more {
+.module-entry b {
   border-color: rgba(255,255,255,.16);
   background: rgba(56, 30, 112, .72);
   box-shadow: 0 14px 34px rgba(80, 42, 180, .28);
@@ -2596,6 +2577,11 @@ body::before {
   gap: clamp(16px, 1.6vw, 30px);
 }
 
+.module-panel .detail-waterfall-column,
+.railia-case-section .detail-waterfall-column {
+  gap: clamp(16px, 1.6vw, 30px);
+}
+
 .module-panel .detail-waterfall .detail-card,
 .railia-case-section .detail-waterfall .detail-card {
   border-radius: 16px;
@@ -2646,7 +2632,7 @@ body::before {
 
   .module-entry strong {
     margin-top: 116px;
-    font-size: 38px;
+    font-size: 32px;
   }
 
   .detail-group {

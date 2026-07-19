@@ -1,11 +1,8 @@
 ﻿function renderGallery() {
   const gallery = document.getElementById('detailGallery');
   if (!gallery || !window.galleryData) return;
-  const visibleCount = new Map();
   const groupCache = new WeakMap();
   const naturalSorter = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
-  const INITIAL_ITEMS = 9;
-  const LOAD_MORE_STEP = 9;
 
   function sortByPathNumber(a, b) {
     return naturalSorter.compare(a.src || a.title || '', b.src || b.title || '');
@@ -63,18 +60,19 @@
   function renderWaterfall(items, labelPrefix, key) {
     const safeItems = items.filter(Boolean);
     if (!safeItems.length) return '';
-    const count = Math.min(visibleCount.get(key) || INITIAL_ITEMS, safeItems.length);
-    const visibleItems = safeItems.slice(0, count);
+    const columns = [[], [], []];
+    safeItems.forEach((item, index) => {
+      columns[index % columns.length].push(item);
+    });
 
     return `
       <div class="detail-waterfall" data-group-key="${key}" data-total="${safeItems.length}">
-        ${visibleItems.map((item) => renderMediaCard(item, `${labelPrefix} / ${item.title}`)).join('')}
+        ${columns.map((columnItems) => `
+          <div class="detail-waterfall-column">
+            ${columnItems.map((item) => renderMediaCard(item, `${labelPrefix} / ${item.title}`)).join('')}
+          </div>
+        `).join('')}
       </div>
-      ${count < safeItems.length ? `
-        <button class="load-more" type="button" data-load-more="${key}" data-total="${safeItems.length}">
-          加载更多
-        </button>
-      ` : ''}
     `;
   }
 
@@ -301,22 +299,6 @@
       return;
     }
 
-    const loadMore = event.target.closest('[data-load-more]');
-    if (loadMore) {
-      const key = loadMore.dataset.loadMore;
-      const total = Number(loadMore.dataset.total);
-      const current = visibleCount.get(key) || INITIAL_ITEMS;
-      visibleCount.set(key, Math.min(current + LOAD_MORE_STEP, total));
-      const panel = loadMore.closest('.module-panel');
-      const article = loadMore.closest('.module-accordion-item');
-      const moduleIndex = Number(article.querySelector('.module-entry').dataset.moduleIndex);
-      const wrapper = document.createElement('div');
-      wrapper.innerHTML = renderModuleContent(window.galleryData[moduleIndex]);
-      const nextPanel = wrapper.firstElementChild;
-      panel.replaceWith(nextPanel);
-      setupVideoPosters(nextPanel);
-      setupMediaSkeletons(nextPanel);
-    }
   });
 
   renderEntry();
@@ -326,33 +308,40 @@
 
 function setupLightbox() {
   const lightbox = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightbox-img');
   const lbCaption = document.getElementById('lightbox-caption');
   const stage = lightbox.querySelector('.lightbox-stage');
-  let lbVideo = lightbox.querySelector('.lightbox-video');
+  let currentMedia = null;
   let lastFocused = null;
 
-  if (!lbVideo) {
-    lbVideo = document.createElement('video');
-    lbVideo.className = 'lightbox-video';
-    lbVideo.controls = true;
-    lbVideo.playsInline = true;
-    stage.insertBefore(lbVideo, lbCaption);
+  function clearMedia() {
+    if (currentMedia) {
+      if (currentMedia.tagName === 'VIDEO') {
+        currentMedia.pause();
+        currentMedia.removeAttribute('src');
+      }
+      currentMedia.remove();
+      currentMedia = null;
+    }
   }
 
   function open(src, caption, alt, type) {
     lastFocused = document.activeElement;
-    lbImg.hidden = type === 'video';
-    lbVideo.hidden = type !== 'video';
+    clearMedia();
+
     if (type === 'video') {
-      lbVideo.src = src;
-      lbImg.src = '';
+      currentMedia = document.createElement('video');
+      currentMedia.className = 'lightbox-video';
+      currentMedia.controls = true;
+      currentMedia.playsInline = true;
+      currentMedia.src = src;
     } else {
-      lbImg.src = src;
-      lbImg.alt = alt || caption || '';
-      lbVideo.pause();
-      lbVideo.removeAttribute('src');
+      currentMedia = document.createElement('img');
+      currentMedia.className = 'lightbox-img';
+      currentMedia.src = src;
+      currentMedia.alt = alt || caption || '';
     }
+
+    stage.insertBefore(currentMedia, lbCaption);
     lbCaption.textContent = caption || '';
     stage.scrollTop = 0;
     lightbox.hidden = false;
@@ -362,9 +351,7 @@ function setupLightbox() {
 
   function close() {
     lightbox.hidden = true;
-    lbImg.src = '';
-    lbVideo.pause();
-    lbVideo.removeAttribute('src');
+    clearMedia();
     document.body.style.overflow = '';
     if (lastFocused) lastFocused.focus();
   }
