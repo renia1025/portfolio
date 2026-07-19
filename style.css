@@ -987,6 +987,7 @@ a { color: inherit; }
   }
   .scroll-cue {
     bottom: 18px;
+    pointer-events: none;
   }
   .scroll-cue::after {
     height: 28px;
@@ -2597,6 +2598,39 @@ body::before {
     radial-gradient(circle at 70% 8%, rgba(139, 77, 255, .12), transparent 34%),
     rgba(10, 10, 14, .82);
   box-shadow: 0 18px 50px rgba(0,0,0,.32);
+}
+
+.module-panel.is-railia-ui-showcase .detail-group {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.module-panel.is-railia-ui-showcase .detail-head {
+  display: none;
+}
+
+.module-panel.is-railia-ui-showcase .detail-waterfall {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 3vw, 58px);
+}
+
+.module-panel.is-railia-ui-showcase .detail-waterfall-column {
+  display: contents;
+}
+
+.module-panel.is-railia-ui-showcase .detail-card {
+  width: 100%;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.module-panel.is-railia-ui-showcase .detail-card img {
+  width: 100%;
+  height: auto;
 }
 
 .detail-card span {
