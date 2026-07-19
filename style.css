@@ -1855,6 +1855,10 @@ body::before {
     font-size: clamp(38px, 10vw, 64px);
   }
 
+  .hero-title h2 span {
+    display: block;
+  }
+
   .module-panel .detail-waterfall,
   .railia-case-section .detail-waterfall {
     grid-template-columns: 1fr;
@@ -2114,26 +2118,29 @@ body::before {
 
 @media (max-width: 900px) {
   .skills {
-    min-height: 300px;
-    padding: 74px 0 42px;
+    min-height: 220px;
+    padding: 50px 0 28px;
     align-items: flex-start;
     justify-content: flex-start;
     overflow: hidden;
   }
 
   .skills h2 {
-    top: 36px;
-    font-size: 58px;
-    opacity: .5;
+    top: 128px;
+    z-index: 2;
+    font-size: clamp(32px, 10vw, 48px);
+    line-height: 1;
+    opacity: .56;
+    pointer-events: none;
   }
 
   .skills ul {
     width: calc(100% - 28px);
     display: grid;
     grid-template-columns: none;
-    gap: 12px;
+    gap: 44px;
     overflow: hidden;
-    padding: 84px 0 16px;
+    padding: 14px 0 10px;
     margin-inline: 14px;
     mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
     -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
@@ -2615,8 +2622,13 @@ body::before {
   }
 
   .module-entry {
-    min-height: 260px;
+    min-height: 292px;
     border-radius: 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(70px, 1fr) auto auto auto;
+    align-content: stretch;
+    row-gap: 0;
     padding: 22px;
   }
 
@@ -2625,14 +2637,57 @@ body::before {
     position: sticky;
     top: 0;
     z-index: 50;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-rows: auto;
+    align-items: center;
+    column-gap: 12px;
     min-height: 76px;
     padding: 14px 16px;
     border-radius: 16px;
   }
 
   .module-entry strong {
-    margin-top: 116px;
-    font-size: 32px;
+    align-self: end;
+    max-width: 100%;
+    margin-top: 0;
+    font-size: clamp(28px, 8vw, 34px);
+    line-height: 1.06;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .module-entry small {
+    margin-top: 10px;
+    padding-right: 0;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .module-entry b {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    justify-self: start;
+    min-width: 104px;
+    margin-top: 16px;
+    padding: 11px 16px;
+    text-align: center;
+  }
+
+  .module-accordion-item.is-open .module-entry strong {
+    margin-top: 0;
+    font-size: 20px;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .module-accordion-item.is-open .module-entry b {
+    justify-self: end;
+    min-width: 68px;
+    margin-top: 0;
+    padding: 8px 10px;
   }
 
   .detail-group {
