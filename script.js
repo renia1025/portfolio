@@ -33,10 +33,10 @@
   }
 
   function coverFor(module) {
-    if (module.title === 'RAILIA Visual') {
+    if (module.title === '睿莉雅视觉设计') {
       return 'railia-visual/2-website-banners/1.png';
     }
-    if (module.title === 'BY-HEALTH') {
+    if (module.title === '汤臣倍健电商视觉') {
       return 'optimized-assets/by-health/1-KV/kv.jpg';
     }
     const firstGroup = module.groups.find((group) => group.items.length);
@@ -72,7 +72,7 @@
       </div>
       ${count < safeItems.length ? `
         <button class="load-more" type="button" data-load-more="${key}" data-total="${safeItems.length}">
-          Load more
+          加载更多
         </button>
       ` : ''}
     `;
@@ -146,65 +146,65 @@
     const commerceItems = functionGroup.items.filter((item) => /cart|order|payment|address|after-sales/i.test(item.src));
     const serviceItems = functionGroup.items.filter((item) => /about|contact|news|service|questionnaire|railia/i.test(item.src));
 
-    if (module.title !== 'RAILIA UI') return '';
+    if (module.title !== '睿莉雅官网 UI/UX 设计') return '';
     return `
       <div class="railia-case">
         <section class="railia-case-hero">
           <div class="railia-case-copy">
-            <p class="case-kicker">RAILIA UI / AI Beauty Tech</p>
-            <h3>Responsive Website Experience for an AI LED Skincare Device</h3>
-            <p>RAILIA's website system introduces a beauty-tech product, supports shopping decisions, and completes overseas commerce flows through a premium, clean, technology-driven interface.</p>
+            <p class="case-kicker">睿莉雅官网 UI / AI 美容科技</p>
+            <h3>面向 AI LED 护肤仪的响应式官网体验</h3>
+            <p>睿莉雅官网系统围绕美容科技产品展开，通过高级、干净且具有科技感的界面，完成产品介绍、购买决策支持与海外电商流程承接。</p>
           </div>
           <div class="railia-case-visual">
-            ${home ? renderMediaCard(home, 'Homepage Experience') : ''}
-            ${homeMobile ? renderMediaCard(homeMobile, 'Mobile Homepage') : ''}
+            ${home ? renderMediaCard(home, '官网首页体验') : ''}
+            ${homeMobile ? renderMediaCard(homeMobile, '移动端首页') : ''}
           </div>
         </section>
 
         <section class="railia-case-strip">
           <div>
-            <span>Role</span>
-            <strong>UI / UX Design</strong>
+            <span>职责</span>
+            <strong>UI / UX 设计</strong>
           </div>
           <div>
-            <span>Platform</span>
-            <strong>Responsive Web</strong>
+            <span>平台</span>
+            <strong>响应式官网</strong>
           </div>
           <div>
-            <span>Experience</span>
-            <strong>Product, Commerce, Service</strong>
+            <span>体验范围</span>
+            <strong>产品、电商、服务</strong>
           </div>
           <div>
-            <span>Visual Tone</span>
-            <strong>Clinical, Premium, AI-Tech</strong>
+            <span>视觉调性</span>
+            <strong>专业、高级、AI 科技感</strong>
           </div>
         </section>
 
         <section class="railia-case-section">
           <div class="railia-section-copy">
-            <span>01 / Product Story</span>
-            <h4>Turn device value into a clear product narrative.</h4>
-            <p>The homepage and detail pages focus on product benefits, technology cues, device imagery and conversion paths, helping users understand RAILIA before entering purchase flows.</p>
+            <span>01 / 产品叙事</span>
+            <h4>将设备价值转化为清晰的产品表达。</h4>
+            <p>首页与详情页围绕产品功效、科技线索、设备图像与转化路径展开，帮助用户在进入购买流程前理解睿莉雅的产品价值。</p>
           </div>
-          ${renderWaterfall([detail, detailMobile], 'Product Story', groupKey(module.title, 'Product Story'))}
+          ${renderWaterfall([detail, detailMobile], '产品叙事', groupKey(module.title, '产品叙事'))}
         </section>
 
         <section class="railia-case-section">
           <div class="railia-section-copy">
-            <span>02 / Commerce Flow</span>
-            <h4>Build purchase confidence across account, cart and order states.</h4>
-            <p>Functional pages cover login, cart, overseas payment, order details, address management and after-sales scenarios so the product website can support a complete buying journey.</p>
+            <span>02 / 交易流程</span>
+            <h4>在账号、购物车与订单状态中建立购买信心。</h4>
+            <p>功能页面覆盖登录注册、购物车、海外支付、订单详情、地址管理与售后申请等场景，让官网能够支撑完整的购买旅程。</p>
           </div>
-          ${renderWaterfall(commerceItems, 'Commerce Flow', groupKey(module.title, 'Commerce Flow'))}
+          ${renderWaterfall(commerceItems, '交易流程', groupKey(module.title, '交易流程'))}
         </section>
 
         <section class="railia-case-section">
           <div class="railia-section-copy">
-            <span>03 / Brand Support</span>
-            <h4>Extend trust through service, brand and content pages.</h4>
-            <p>Support pages, about pages, news and questionnaire flows create the service layer behind the device, balancing brand credibility with practical user assistance.</p>
+            <span>03 / 品牌支持</span>
+            <h4>通过服务、品牌与内容页面延展信任感。</h4>
+            <p>服务页、关于页、新闻页与问卷流程共同构建设备背后的服务层，在品牌可信度与实际用户帮助之间取得平衡。</p>
           </div>
-          ${renderWaterfall(serviceItems, 'Brand Support', groupKey(module.title, 'Brand Support'))}
+          ${renderWaterfall(serviceItems, '品牌支持', groupKey(module.title, '品牌支持'))}
         </section>
       </div>
     `;
@@ -212,7 +212,7 @@
 
   function renderModuleContent(module) {
     const groups = sortedGroups(module);
-    if (module.title === 'RAILIA UI') {
+    if (module.title === '睿莉雅官网 UI/UX 设计') {
       return `
         <div class="module-panel">
           ${renderRailiaUiCase(module)}
@@ -226,7 +226,7 @@
           <section class="detail-group">
             <header class="detail-head">
               <h4>${group.title}</h4>
-              <p>${group.items.length} items</p>
+              <p>${group.items.length} 件作品</p>
             </header>
             ${renderWaterfall(group.items, group.title, groupKey(module.title, group.title))}
           </section>
@@ -245,8 +245,8 @@
                 ${coverFor(module) ? `<img src="${coverFor(module)}" alt="" loading="lazy">` : ''}
                 <span class="module-entry-index">${String(index + 1).padStart(2, '0')}</span>
                 <strong>${module.title}</strong>
-                <small>${module.groups.length} sections / ${countItems(module)} works</small>
-                <b>Open</b>
+                <small>${module.groups.length} 个栏目 / ${countItems(module)} 件作品</small>
+                <b>展开</b>
               </button>
             </article>
           `;
@@ -268,7 +268,7 @@
         panel.remove();
         article.classList.remove('is-open');
         entry.setAttribute('aria-expanded', 'false');
-        if (label) label.textContent = 'Open';
+        if (label) label.textContent = '展开';
         window.dispatchEvent(new CustomEvent('portfolio:module-toggle'));
         runWhenIdle(() => {
           oldPanel.querySelectorAll('video').forEach((video) => {
@@ -283,9 +283,9 @@
       } else {
         article.classList.add('is-open');
         entry.setAttribute('aria-expanded', 'true');
-        if (label) label.textContent = 'Close';
+        if (label) label.textContent = '收起';
         window.dispatchEvent(new CustomEvent('portfolio:module-toggle'));
-        article.insertAdjacentHTML('beforeend', '<div class="module-panel module-panel-loading" aria-live="polite">Loading case preview</div>');
+        article.insertAdjacentHTML('beforeend', '<div class="module-panel module-panel-loading" aria-live="polite">正在加载项目预览</div>');
         const loadingPanel = article.querySelector(':scope > .module-panel-loading');
         runWhenIdle(() => {
           if (!article.classList.contains('is-open') || !loadingPanel || !loadingPanel.isConnected) return;
@@ -453,14 +453,14 @@ function setupBackToTop() {
   if (!btn) return;
   let ticking = false;
   function currentTarget() {
-    const openModule = document.querySelector('.module-accordion-item.is-open .module-entry');
+    const openModule = document.querySelector('.module-accordion-item.is-open');
     return openModule || document.getElementById('top');
   }
 
   function targetLabel(target) {
-    if (!target || target.id === 'top') return 'back to top';
-    const title = target.querySelector('strong');
-    return title ? `back to ${title.textContent}` : 'back to current project';
+    if (!target || target.id === 'top') return '返回顶部';
+    const title = target.querySelector('.module-entry strong');
+    return title ? `返回 ${title.textContent}` : '返回当前项目';
   }
 
   const update = () => {
@@ -484,7 +484,7 @@ function setupBackToTop() {
     event.stopPropagation();
     const target = currentTarget();
     if (target && target.id !== 'top') {
-      const top = target.getBoundingClientRect().top + window.scrollY - 10;
+      const top = target.getBoundingClientRect().top + window.scrollY - 12;
       window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });

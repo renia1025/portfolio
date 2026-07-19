@@ -1,9 +1,9 @@
 ﻿window.galleryData = [
     {
-        "title":  "RAILIA Visual",
+        "title":  "睿莉雅视觉设计",
         "groups":  [
                        {
-                           "title":  "Creative Art Posters",
+                           "title":  "创意艺术海报",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -33,7 +33,7 @@
                                      ]
                        },
                        {
-                           "title":  "Website Banners",
+                           "title":  "官网 Banner",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -103,7 +103,7 @@
                                      ]
                        },
                        {
-                           "title":  "Creative Poster Series / Product Detail Posters",
+                           "title":  "创意海报系列 / 产品详情海报",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -148,57 +148,57 @@
                                      ]
                        },
                        {
-                           "title":  "Creative Poster Series / Landmark Posters",
+                           "title":  "创意海报系列 / 城市地标海报",
                            "items":  [
                                          {
-                                             "title":  "Shanghai",
+                                             "title":  "上海",
                                              "src":  "optimized-assets/railia-visual/3-creative-poster-series/2-landmark-posters/1-shanghai.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Uk",
+                                             "title":  "英国",
                                              "src":  "optimized-assets/railia-visual/3-creative-poster-series/2-landmark-posters/2-uk.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Shenzhen",
+                                             "title":  "深圳",
                                              "src":  "optimized-assets/railia-visual/3-creative-poster-series/2-landmark-posters/3-shenzhen.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Usa",
+                                             "title":  "美国",
                                              "src":  "optimized-assets/railia-visual/3-creative-poster-series/2-landmark-posters/4-usa.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Italy",
+                                             "title":  "意大利",
                                              "src":  "optimized-assets/railia-visual/3-creative-poster-series/2-landmark-posters/5-italy.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Japan",
+                                             "title":  "日本",
                                              "src":  "optimized-assets/railia-visual/3-creative-poster-series/2-landmark-posters/6-japan.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Germany",
+                                             "title":  "德国",
                                              "src":  "optimized-assets/railia-visual/3-creative-poster-series/2-landmark-posters/7-germany.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "France",
+                                             "title":  "法国",
                                              "src":  "optimized-assets/railia-visual/3-creative-poster-series/2-landmark-posters/8-france.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Canada",
+                                             "title":  "加拿大",
                                              "src":  "optimized-assets/railia-visual/3-creative-poster-series/2-landmark-posters/9-canada.jpg",
                                              "type":  "image"
                                          }
                                      ]
                        },
                        {
-                           "title":  "Creative Poster Series / Motion Emotion Posters / Images",
+                           "title":  "创意海报系列 / 动态情绪海报 / 图片",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -223,7 +223,7 @@
                                      ]
                        },
                        {
-                           "title":  "Creative Poster Series / Motion Emotion Posters / Videos",
+                           "title":  "创意海报系列 / 动态情绪海报 / 视频",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -243,7 +243,7 @@
                                      ]
                        },
                        {
-                           "title":  "Creative Poster Series / Hot Topic Posters",
+                           "title":  "创意海报系列 / 热点主题海报",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -268,7 +268,7 @@
                                      ]
                        },
                        {
-                           "title":  "Creative Poster Series / Daily Promotion",
+                           "title":  "创意海报系列 / 日常促销视觉",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -333,7 +333,7 @@
                                      ]
                        },
                        {
-                           "title":  "Creative Poster Series / Daily Promotion / Coexist With Art Series / Vol.1",
+                           "title":  "创意海报系列 / 日常促销视觉 / 与艺术共存系列 / Vol.1",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -353,7 +353,7 @@
                                      ]
                        },
                        {
-                           "title":  "Creative Poster Series / Daily Promotion / Coexist With Art Series / Vol.2",
+                           "title":  "创意海报系列 / 日常促销视觉 / 与艺术共存系列 / Vol.2",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -388,37 +388,37 @@
                                      ]
                        },
                        {
-                           "title":  "Ai Videos",
+                           "title":  "AI 视频",
                            "items":  [
                                          {
-                                             "title":  "Daily Stability Mode 16 9",
+                                             "title":  "日常稳定模式 16:9",
                                              "src":  "railia-visual/4-ai-videos/1-daily-stability-mode-16-9.mp4",
                                              "type":  "video"
                                          },
                                          {
-                                             "title":  "Oil Control Acne Mode",
+                                             "title":  "控油祛痘模式",
                                              "src":  "railia-visual/4-ai-videos/3-oil-control-acne-mode.mp4",
                                              "type":  "video"
                                          },
                                          {
-                                             "title":  "Anti Aging Firming Mode",
+                                             "title":  "抗老紧致模式",
                                              "src":  "railia-visual/4-ai-videos/4-anti-aging-firming-mode.mp4",
                                              "type":  "video"
                                          },
                                          {
-                                             "title":  "Spot Lightening Mode",
+                                             "title":  "淡斑提亮模式",
                                              "src":  "railia-visual/4-ai-videos/5-spot-lightening-mode.mp4",
                                              "type":  "video"
                                          },
                                          {
-                                             "title":  "Soothing Sensitive Mode",
+                                             "title":  "舒缓敏感模式",
                                              "src":  "railia-visual/4-ai-videos/6-soothing-sensitive-mode.mp4",
                                              "type":  "video"
                                          }
                                      ]
                        },
                        {
-                           "title":  "Brand Brochure",
+                           "title":  "品牌手册",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -435,35 +435,35 @@
                    ]
     },
     {
-        "title":  "BY-HEALTH",
+        "title":  "汤臣倍健电商视觉",
         "groups":  [
                        {
-                           "title":  "Kv",
+                           "title":  "主视觉",
                            "items":  [
                                          {
-                                             "title":  "Coenzyme Q10 Kv",
+                                             "title":  "辅酶 Q10 主视觉",
                                              "src":  "optimized-assets/by-health/1-KV/coenzyme-q10-kv.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Home Kv",
+                                             "title":  "首页主视觉",
                                              "src":  "by-health/1-KV/home-kv.png",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Kv",
+                                             "title":  "主视觉",
                                              "src":  "optimized-assets/by-health/1-KV/kv.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Liver Care Plus Kv",
+                                             "title":  "护肝片 Plus 主视觉",
                                              "src":  "optimized-assets/by-health/1-KV/liver-care-plus-kv.jpg",
                                              "type":  "image"
                                          }
                                      ]
                        },
                        {
-                           "title":  "Kv / Kv",
+                           "title":  "主视觉 / KV 延展",
                            "items":  [
                                          {
                                              "title":  "38",
@@ -478,7 +478,7 @@
                                      ]
                        },
                        {
-                           "title":  "Banner",
+                           "title":  "横幅设计",
                            "items":  [
                                          {
                                              "title":  "545",
@@ -491,12 +491,12 @@
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Asset",
+                                             "title":  "素材",
                                              "src":  "optimized-assets/by-health/2-banner/asset.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Ok",
+                                             "title":  "确认稿",
                                              "src":  "optimized-assets/by-health/2-banner/ok.jpg",
                                              "type":  "image"
                                          },
@@ -508,7 +508,7 @@
                                      ]
                        },
                        {
-                           "title":  "Main Images / Main Images",
+                           "title":  "产品主图 / 主图系列",
                            "items":  [
                                          {
                                              "title":  "8",
@@ -521,29 +521,29 @@
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Asset",
+                                             "title":  "素材",
                                              "src":  "optimized-assets/by-health/3-main-images/main-images/asset.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Asset 2",
+                                             "title":  "素材 2",
                                              "src":  "optimized-assets/by-health/3-main-images/main-images/asset-2.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Home Kv",
+                                             "title":  "首页主视觉",
                                              "src":  "optimized-assets/by-health/3-main-images/main-images/home-kv.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Ok 3",
+                                             "title":  "确认稿 3",
                                              "src":  "optimized-assets/by-health/3-main-images/main-images/ok-3.jpg",
                                              "type":  "image"
                                          }
                                      ]
                        },
                        {
-                           "title":  "Main Images / Main Images 2",
+                           "title":  "产品主图 / 主图系列 2",
                            "items":  [
                                          {
                                              "title":  "01",
@@ -578,7 +578,7 @@
                                      ]
                        },
                        {
-                           "title":  "Main Images / Saba Campaign Main Images",
+                           "title":  "产品主图 / Saba 活动主图",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -613,37 +613,37 @@
                                      ]
                        },
                        {
-                           "title":  "Detail Pages",
+                           "title":  "详情页设计",
                            "items":  [
                                          {
-                                             "title":  "8Th Anniversary Store Home",
+                                             "title":  "8 周年店铺首页",
                                              "src":  "by-health/4-detail-pages/8th-anniversary-store-home.png",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Coenzyme Q10",
+                                             "title":  "辅酶 Q10",
                                              "src":  "by-health/4-detail-pages/coenzyme-q10.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Liver Care Plus",
+                                             "title":  "护肝片 Plus",
                                              "src":  "by-health/4-detail-pages/liver-care-plus.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "New Power Week Store Home",
+                                             "title":  "新势力周店铺首页",
                                              "src":  "by-health/4-detail-pages/new-power-week-store-home.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Women Liver Care",
+                                             "title":  "女士护肝片",
                                              "src":  "by-health/4-detail-pages/women-liver-care.png",
                                              "type":  "image"
                                          }
                                      ]
                        },
                        {
-                           "title":  "Poster Optimization",
+                           "title":  "海报优化",
                            "items":  [
                                          {
                                              "title":  "1",
@@ -670,118 +670,118 @@
                    ]
     },
     {
-        "title":  "RAILIA UI",
+        "title":  "睿莉雅官网 UI/UX 设计",
         "groups":  [
                        {
-                           "title":  "Website Home Detail Pages",
+                           "title":  "官网首页与详情页",
                            "items":  [
                                          {
-                                             "title":  "Detail Pages",
+                                             "title":  "详情页",
                                              "src":  "railia-ui/1-website-home-detail-pages/detail-pages.png",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Detail Pages Mobile",
+                                             "title":  "移动端详情页",
                                              "src":  "railia-ui/1-website-home-detail-pages/detail-pages-mobile.png",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Home",
+                                             "title":  "首页",
                                              "src":  "railia-ui/1-website-home-detail-pages/home.png",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Home Mobile",
+                                             "title":  "移动端首页",
                                              "src":  "optimized-assets/railia-ui/1-website-home-detail-pages/home-mobile.jpg",
                                              "type":  "image"
                                          }
                                      ]
                        },
                        {
-                           "title":  "Website Functional Pages",
+                           "title":  "官网功能页面",
                            "items":  [
                                          {
-                                             "title":  "F1 1 Overseas Payment",
+                                             "title":  "F1-1 海外支付",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/f1-1-overseas-payment.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "H1 1 Cart",
+                                             "title":  "H1-1 购物车",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/h1-1-cart.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Questionnaire",
+                                             "title":  "问卷页面",
                                              "src":  "railia-ui/2-website-functional-pages/questionnaire.png",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Updated Z2 4 Contact Us Cn",
+                                             "title":  "Z2-4 联系我们中文页",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/updated-z2-4-contact-us-cn.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "W1 1 Order Detail",
+                                             "title":  "W1-1 订单详情",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/w1-1-order-detail.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "W1 4 After Sales Request",
+                                             "title":  "W1-4 售后申请",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/w1-4-after-sales-request.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "W1 6 Unpaid Order Detail",
+                                             "title":  "W1-6 待支付订单详情",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/w1-6-unpaid-order-detail.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "X1 2 3 Chinese Address",
+                                             "title":  "X1-2-3 国内地址",
                                              "src":  "railia-ui/2-website-functional-pages/x1-2-3-chinese-address.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "X1 2 Overseas Address",
+                                             "title":  "X1-2 海外地址",
                                              "src":  "railia-ui/2-website-functional-pages/x1-2-overseas-address.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "X1 4 Empty Order",
+                                             "title":  "X1-4 空订单",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/x1-4-empty-order.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Y1 1 Login Register",
+                                             "title":  "Y1-1 登录注册",
                                              "src":  "railia-ui/2-website-functional-pages/y1-1-login-register.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Z2 1 About Railia",
+                                             "title":  "Z2-1 关于睿莉雅",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/z2-1-about-railia.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Z2 1 About Railia 1",
+                                             "title":  "Z2-1 关于睿莉雅补充页",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/z2-1-about-railia-1.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Z2 1 Railia",
+                                             "title":  "Z2-1 睿莉雅品牌页",
                                              "src":  "railia-ui/2-website-functional-pages/z2-1-railia.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Z2 1 Railia Cn",
+                                             "title":  "Z2-1 睿莉雅中文页",
                                              "src":  "railia-ui/2-website-functional-pages/z2-1-railia-cn.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Z2 4 2 News 02",
+                                             "title":  "Z2-4-2 新闻详情",
                                              "src":  "railia-ui/2-website-functional-pages/z2-4-2-news-02.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Z2 5 Service Info Support",
+                                             "title":  "Z2-5 服务信息支持",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/z2-5-service-info-support.jpg",
                                              "type":  "image"
                                          }
