@@ -269,6 +269,7 @@
         article.classList.remove('is-open');
         entry.setAttribute('aria-expanded', 'false');
         if (label) label.textContent = 'Open';
+        window.dispatchEvent(new CustomEvent('portfolio:module-toggle'));
         runWhenIdle(() => {
           oldPanel.querySelectorAll('video').forEach((video) => {
             video.pause();
@@ -283,6 +284,7 @@
         article.classList.add('is-open');
         entry.setAttribute('aria-expanded', 'true');
         if (label) label.textContent = 'Close';
+        window.dispatchEvent(new CustomEvent('portfolio:module-toggle'));
         article.insertAdjacentHTML('beforeend', '<div class="module-panel module-panel-loading" aria-live="polite">Loading case preview</div>');
         const loadingPanel = article.querySelector(':scope > .module-panel-loading');
         runWhenIdle(() => {
@@ -450,8 +452,24 @@ function setupBackToTop() {
   const btn = document.getElementById('toTop');
   if (!btn) return;
   let ticking = false;
+  function currentTarget() {
+    const openModule = document.querySelector('.module-accordion-item.is-open .module-entry');
+    return openModule || document.getElementById('top');
+  }
+
+  function targetLabel(target) {
+    if (!target || target.id === 'top') return 'back to top';
+    const title = target.querySelector('strong');
+    return title ? `back to ${title.textContent}` : 'back to current project';
+  }
+
   const update = () => {
-    btn.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.8);
+    const target = currentTarget();
+    const hasOpenModule = target && target.id !== 'top';
+    btn.classList.toggle('is-visible', hasOpenModule || window.scrollY > window.innerHeight * 0.8);
+    const label = targetLabel(target);
+    btn.setAttribute('aria-label', label);
+    btn.title = label;
     ticking = false;
   };
   window.addEventListener('scroll', () => {
@@ -460,8 +478,17 @@ function setupBackToTop() {
       window.requestAnimationFrame(update);
     }
   }, { passive: true });
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.addEventListener('portfolio:module-toggle', update);
+  btn.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const target = currentTarget();
+    if (target && target.id !== 'top') {
+      const top = target.getBoundingClientRect().top + window.scrollY - 10;
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   });
   update();
 }

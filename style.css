@@ -2277,7 +2277,7 @@ body::before {
   position: fixed;
   right: clamp(18px, 2.4vw, 40px);
   bottom: clamp(18px, 2.4vw, 40px);
-  z-index: 900;
+  z-index: 1200;
   width: 52px;
   height: 52px;
   padding: 0;
@@ -2401,6 +2401,258 @@ body::before {
   transform: translateY(-6px);
   border-color: rgba(169,141,255,.4);
   box-shadow: 0 40px 110px rgba(90,45,190,.4);
+}
+
+/* Selected works: dark violet case-study treatment */
+.selected {
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 76% 8%, rgba(139, 77, 255, .2), transparent 34%),
+    radial-gradient(ellipse at 8% 38%, rgba(106, 64, 255, .14), transparent 28%),
+    linear-gradient(180deg, #000 0%, #05030a 44%, #000 100%);
+}
+
+.selected::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .25;
+  background-image: radial-gradient(rgba(255,255,255,.5) .55px, transparent .55px);
+  background-size: 8px 8px;
+  mask-image: radial-gradient(ellipse at 50% 32%, #000 0 36%, transparent 70%);
+}
+
+.selected-hero {
+  opacity: .78;
+  filter: saturate(.9) contrast(1.05);
+}
+
+.work-intro {
+  position: relative;
+  padding-top: clamp(80px, 8vw, 150px);
+}
+
+.work-intro .section-mark {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 999px;
+  background: rgba(30, 22, 46, .72);
+  color: rgba(255, 255, 255, .68);
+  letter-spacing: .08em;
+  backdrop-filter: blur(14px);
+}
+
+.work-intro h2 {
+  max-width: 1120px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: rgba(255,255,255,.95);
+  text-wrap: balance;
+}
+
+.work-intro p {
+  color: rgba(255,255,255,.56);
+}
+
+.detail-gallery {
+  position: relative;
+  padding-top: clamp(42px, 4.5vw, 86px);
+}
+
+.module-accordion {
+  gap: clamp(28px, 3vw, 58px);
+}
+
+.module-accordion-item {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.module-entry {
+  min-height: clamp(260px, 22vw, 420px);
+  border-radius: 26px;
+  border-color: rgba(255,255,255,.13);
+  background:
+    radial-gradient(circle at 78% 18%, rgba(139, 77, 255, .24), transparent 34%),
+    linear-gradient(135deg, rgba(28, 22, 44, .8), rgba(5, 5, 8, .92));
+  box-shadow: 0 34px 90px rgba(0,0,0,.46), inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter: blur(16px);
+}
+
+.module-entry img {
+  opacity: .42;
+  filter: saturate(.86) contrast(1.08);
+}
+
+.module-entry::after {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.84), rgba(0,0,0,.36) 48%, rgba(66, 28, 148, .36)),
+    linear-gradient(to bottom, rgba(0,0,0,.12), rgba(0,0,0,.88));
+}
+
+.module-entry-index {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 30px;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  background: rgba(0,0,0,.3);
+  color: rgba(255,255,255,.66);
+  backdrop-filter: blur(10px);
+}
+
+.module-entry strong {
+  max-width: min(68vw, 940px);
+  font-weight: 500;
+  text-shadow: 0 16px 46px rgba(0,0,0,.62);
+}
+
+.module-entry small {
+  color: rgba(255,255,255,.58);
+}
+
+.module-entry b,
+.load-more {
+  border-color: rgba(255,255,255,.16);
+  background: rgba(56, 30, 112, .72);
+  box-shadow: 0 14px 34px rgba(80, 42, 180, .28);
+}
+
+.module-accordion-item.is-open .module-entry {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  min-height: clamp(76px, 5.6vw, 108px);
+  padding: clamp(14px, 1.2vw, 23px) clamp(20px, 2vw, 38px);
+  border-radius: 18px;
+  background: rgba(8, 6, 14, .86);
+  box-shadow: 0 24px 70px rgba(0,0,0,.5);
+  backdrop-filter: blur(18px);
+}
+
+.selected,
+.detail-gallery,
+.module-accordion,
+.module-accordion-item {
+  overflow: visible;
+}
+
+.module-panel {
+  padding-top: clamp(34px, 3.4vw, 66px);
+}
+
+.detail-group {
+  padding: clamp(24px, 2.4vw, 46px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 86% 0%, rgba(139,77,255,.14), transparent 28%),
+    rgba(8, 8, 12, .62);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter: blur(12px);
+}
+
+.detail-group + .detail-group {
+  margin-top: clamp(28px, 3vw, 58px);
+}
+
+.detail-head {
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding-bottom: clamp(18px, 1.8vw, 34px);
+}
+
+.detail-head h4 {
+  font-weight: 500;
+  color: rgba(255,255,255,.92);
+}
+
+.detail-head p {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 999px;
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.5);
+  font-size: clamp(12px, .86vw, 15px);
+}
+
+.module-panel .detail-waterfall,
+.railia-case-section .detail-waterfall {
+  gap: clamp(16px, 1.6vw, 30px);
+}
+
+.module-panel .detail-waterfall .detail-card,
+.railia-case-section .detail-waterfall .detail-card {
+  border-radius: 16px;
+  border-color: rgba(255,255,255,.09);
+  background:
+    radial-gradient(circle at 70% 8%, rgba(139, 77, 255, .12), transparent 34%),
+    rgba(10, 10, 14, .82);
+  box-shadow: 0 18px 50px rgba(0,0,0,.32);
+}
+
+.detail-card span {
+  color: rgba(255,255,255,.88);
+}
+
+@media (max-width: 900px) {
+  .work-intro {
+    padding: 58px 22px 0;
+  }
+
+  .work-intro h2 {
+    font-size: 34px;
+    line-height: 1.04;
+  }
+
+  .work-intro p {
+    font-size: 14px;
+  }
+
+  .detail-gallery {
+    padding: 36px 14px 72px;
+  }
+
+  .module-entry {
+    min-height: 260px;
+    border-radius: 20px;
+    padding: 22px;
+  }
+
+  .module-accordion-item.is-open .module-entry {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    min-height: 76px;
+    padding: 14px 16px;
+    border-radius: 16px;
+  }
+
+  .module-entry strong {
+    margin-top: 116px;
+    font-size: 38px;
+  }
+
+  .detail-group {
+    padding: 18px;
+    border-radius: 20px;
+  }
 }
 
 /* Hero float cards react to hover */
