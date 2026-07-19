@@ -1961,7 +1961,7 @@ body::before {
 }
 
 .hero-meta {
-  top: clamp(32px, 3.4vw, 65px);
+  top: clamp(32px, 3vw, 65px);
   left: 50%;
   width: min(86vw, 1680px);
   transform: translateX(-50%);

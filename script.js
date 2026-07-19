@@ -33,7 +33,7 @@
   }
 
   function coverFor(module) {
-    if (module.title === '睿莉雅视觉设计') {
+    if (module.title === 'RAILIA 视觉设计') {
       return 'railia-visual/2-website-banners/1.png';
     }
     if (module.title === '汤臣倍健电商视觉') {
@@ -146,14 +146,14 @@
     const commerceItems = functionGroup.items.filter((item) => /cart|order|payment|address|after-sales/i.test(item.src));
     const serviceItems = functionGroup.items.filter((item) => /about|contact|news|service|questionnaire|railia/i.test(item.src));
 
-    if (module.title !== '睿莉雅官网 UI/UX 设计') return '';
+    if (module.title !== 'RAILIA 官网 UI/UX 设计') return '';
     return `
       <div class="railia-case">
         <section class="railia-case-hero">
           <div class="railia-case-copy">
-            <p class="case-kicker">睿莉雅官网 UI / AI 美容科技</p>
+            <p class="case-kicker">RAILIA UI / AI 美容科技</p>
             <h3>面向 AI LED 护肤仪的响应式官网体验</h3>
-            <p>睿莉雅官网系统围绕美容科技产品展开，通过高级、干净且具有科技感的界面，完成产品介绍、购买决策支持与海外电商流程承接。</p>
+            <p>RAILIA 官网系统围绕美容科技产品展开，通过高级、干净且具有科技感的界面，完成产品介绍、购买决策支持与海外电商流程承接。</p>
           </div>
           <div class="railia-case-visual">
             ${home ? renderMediaCard(home, '官网首页体验') : ''}
@@ -184,7 +184,7 @@
           <div class="railia-section-copy">
             <span>01 / 产品叙事</span>
             <h4>将设备价值转化为清晰的产品表达。</h4>
-            <p>首页与详情页围绕产品功效、科技线索、设备图像与转化路径展开，帮助用户在进入购买流程前理解睿莉雅的产品价值。</p>
+            <p>首页与详情页围绕产品功效、科技线索、设备图像与转化路径展开，帮助用户在进入购买流程前理解 RAILIA 的产品价值。</p>
           </div>
           ${renderWaterfall([detail, detailMobile], '产品叙事', groupKey(module.title, '产品叙事'))}
         </section>
@@ -212,7 +212,7 @@
 
   function renderModuleContent(module) {
     const groups = sortedGroups(module);
-    if (module.title === '睿莉雅官网 UI/UX 设计') {
+    if (module.title === 'RAILIA 官网 UI/UX 设计') {
       return `
         <div class="module-panel">
           ${renderRailiaUiCase(module)}

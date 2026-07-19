@@ -1,6 +1,6 @@
 ﻿window.galleryData = [
     {
-        "title":  "睿莉雅视觉设计",
+        "title":  "RAILIA 视觉设计",
         "groups":  [
                        {
                            "title":  "创意艺术海报",
@@ -670,7 +670,7 @@
                    ]
     },
     {
-        "title":  "睿莉雅官网 UI/UX 设计",
+        "title":  "RAILIA 官网 UI/UX 设计",
         "groups":  [
                        {
                            "title":  "官网首页与详情页",
@@ -756,22 +756,22 @@
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Z2-1 关于睿莉雅",
+                                             "title":  "Z2-1 关于 RAILIA",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/z2-1-about-railia.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Z2-1 关于睿莉雅补充页",
+                                             "title":  "Z2-1 关于 RAILIA 补充页",
                                              "src":  "optimized-assets/railia-ui/2-website-functional-pages/z2-1-about-railia-1.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Z2-1 睿莉雅品牌页",
+                                             "title":  "Z2-1 RAILIA 品牌页",
                                              "src":  "railia-ui/2-website-functional-pages/z2-1-railia.jpg",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "Z2-1 睿莉雅中文页",
+                                             "title":  "Z2-1 RAILIA 中文页",
                                              "src":  "railia-ui/2-website-functional-pages/z2-1-railia-cn.jpg",
                                              "type":  "image"
                                          },
