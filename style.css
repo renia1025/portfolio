@@ -1900,9 +1900,21 @@ body::before {
   opacity: 0;
 }
 
+.detail-card.is-loading img[data-full-src] {
+  opacity: 1;
+}
+
 .detail-card img,
 .detail-card video {
   transition: opacity .28s ease, transform 6s ease;
+}
+
+.detail-card img.is-upgrading {
+  opacity: .72;
+}
+
+.detail-card img.is-full-loaded {
+  opacity: 1;
 }
 
 .detail-card.is-error::after {

@@ -42,12 +42,47 @@ function renderGallery() {
     return firstItem ? firstItem.src : '';
   }
 
+  function isLocalImage(src) {
+    return src && !/^(https?:)?\/\//i.test(src) && !src.startsWith('data:') && /\.(png|jpe?g)$/i.test(src);
+  }
+
+  function thumbFor(src, type) {
+    if (type === 'video' || !isLocalImage(src)) return src;
+    return `images/thumbs/${src.replace(/\.(png|jpe?g)$/i, '.jpg')}`;
+  }
+
+  function fallbackToFullImage(image) {
+    const card = image.closest('.detail-card');
+    const fullSrc = card && card.getAttribute('href');
+    if (!fullSrc || image.src.endsWith(fullSrc)) return;
+    image.src = fullSrc;
+  }
+
+  function upgradeToFullImage(image) {
+    const fullSrc = image.dataset.fullSrc;
+    if (!fullSrc || image.dataset.fullLoaded === 'true') return;
+    const loader = new Image();
+    loader.decoding = 'async';
+    loader.onload = () => {
+      image.dataset.fullLoaded = 'true';
+      image.classList.add('is-upgrading');
+      image.src = fullSrc;
+      window.requestAnimationFrame(() => {
+        image.classList.remove('is-upgrading');
+        image.classList.add('is-full-loaded');
+      });
+    };
+    loader.src = fullSrc;
+  }
+
   function renderMediaCard(item, label) {
+    const fullSrc = item.fullSrc || item.src;
+    const previewSrc = item.thumbSrc || thumbFor(item.src, item.type);
     return `
-      <a class="detail-card is-loading ${item.type === 'video' ? 'is-video' : ''}" href="${item.src}" data-type="${item.type}">
+      <a class="detail-card is-loading ${item.type === 'video' ? 'is-video' : ''}" href="${fullSrc}" data-type="${item.type}">
         ${item.type === 'video'
           ? `<video src="${item.src}" muted playsinline preload="metadata"></video>`
-          : `<img src="${item.src}" alt="${item.title}" loading="lazy" decoding="async">`}
+          : `<img src="${previewSrc}" data-full-src="${fullSrc}" alt="${item.title}" loading="lazy" decoding="async">`}
         <span>${label || item.title}</span>
       </a>
     `;
@@ -105,15 +140,19 @@ function renderGallery() {
       const card = image.closest('.detail-card');
       if (!card) return;
       if (image.complete && image.naturalWidth > 0) {
+        if (image.naturalWidth < 16 || image.naturalHeight < 16) fallbackToFullImage(image);
         card.classList.remove('is-loading');
+        upgradeToFullImage(image);
         return;
       }
       image.addEventListener('load', () => {
+        if (image.naturalWidth < 16 || image.naturalHeight < 16) fallbackToFullImage(image);
         card.classList.remove('is-loading');
+        upgradeToFullImage(image);
       }, { once: true });
       image.addEventListener('error', () => {
+        fallbackToFullImage(image);
         card.classList.remove('is-loading');
-        card.classList.add('is-error');
       }, { once: true });
     });
 
@@ -233,7 +272,7 @@ function renderGallery() {
           return `
             <article class="module-accordion-item">
               <button class="module-entry" type="button" data-module-index="${index}" aria-expanded="false">
-                ${coverFor(module) ? `<img src="${coverFor(module)}" alt="" loading="lazy">` : ''}
+                ${coverFor(module) ? `<img src="${thumbFor(coverFor(module), 'image')}" alt="" loading="lazy">` : ''}
                 <span class="module-entry-index">${String(index + 1).padStart(2, '0')}</span>
                 <strong>${module.title}</strong>
                 <small>${module.groups.length} 个栏目 / ${countItems(module)} 件作品</small>
