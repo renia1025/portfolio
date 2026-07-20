@@ -1,4 +1,4 @@
-﻿function renderGallery() {
+function renderGallery() {
   const gallery = document.getElementById('detailGallery');
   if (!gallery || !window.galleryData) return;
   const groupCache = new WeakMap();
@@ -31,7 +31,7 @@
 
   function coverFor(module) {
     if (module.title === 'RAILIA 视觉设计') {
-      return 'railia-visual/2-website-banners/1.png';
+      return 'railia-visual/2-website-banners/1.jpg';
     }
     if (module.title === '汤臣倍健电商视觉') {
       return 'optimized-assets/by-health/1-KV/kv.jpg';
@@ -137,9 +137,9 @@
     const groups = sortedGroups(module);
     const homeGroup = groups[0] || { items: [] };
     const functionGroup = groups[1] || { items: [] };
-    const home = homeGroup.items.find((item) => item.src.includes('/home.png')) || homeGroup.items[0];
+    const home = homeGroup.items.find((item) => item.src.includes('/home.jpg')) || homeGroup.items[0];
     const homeMobile = homeGroup.items.find((item) => item.src.includes('home-mobile'));
-    const detail = homeGroup.items.find((item) => item.src.includes('detail-pages.png'));
+    const detail = homeGroup.items.find((item) => item.src.includes('detail-pages.jpg'));
     const detailMobile = homeGroup.items.find((item) => item.src.includes('detail-pages-mobile'));
     const commerceItems = functionGroup.items.filter((item) => /cart|order|payment|address|after-sales/i.test(item.src));
     const serviceItems = functionGroup.items.filter((item) => /about|contact|news|service|questionnaire|railia/i.test(item.src));

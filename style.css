@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #000;
   --fg: #fff;
   --muted: rgba(255, 255, 255, .52);
@@ -461,7 +461,7 @@ a { color: inherit; }
   content: "";
   width: 24px;
   height: 41px;
-  background: url("assets/reina/arrow.png") center / contain no-repeat;
+  background: url("assets/reina/arrow.svg") center / contain no-repeat;
 }
 
 .selected {

@@ -1,4 +1,4 @@
-﻿window.galleryData = [
+window.galleryData = [
     {
         "title":  "RAILIA 视觉设计",
         "groups":  [
@@ -447,7 +447,7 @@
                                          },
                                          {
                                              "title":  "首页主视觉",
-                                             "src":  "by-health/1-KV/home-kv.png",
+                                             "src":  "by-health/1-KV/home-kv.jpg",
                                              "type":  "image"
                                          },
                                          {
@@ -617,7 +617,7 @@
                            "items":  [
                                          {
                                              "title":  "8 周年店铺首页",
-                                             "src":  "by-health/4-detail-pages/8th-anniversary-store-home.png",
+                                             "src":  "by-health/4-detail-pages/8th-anniversary-store-home.jpg",
                                              "type":  "image"
                                          },
                                          {
@@ -637,7 +637,7 @@
                                          },
                                          {
                                              "title":  "女士护肝片",
-                                             "src":  "by-health/4-detail-pages/women-liver-care.png",
+                                             "src":  "by-health/4-detail-pages/women-liver-care.jpg",
                                              "type":  "image"
                                          }
                                      ]
@@ -677,12 +677,12 @@
                            "items":  [
                                          {
                                              "title":  "官网桌面端详情页",
-                                             "src":  "详情页 (7).png",
+                                             "src":  "detail_7.jpg",
                                              "type":  "image"
                                          },
                                          {
                                              "title":  "官网移动端详情页",
-                                             "src":  "详情页 (8).png",
+                                             "src":  "detail_8.jpg",
                                              "type":  "image"
                                          }
                                      ]
