@@ -210,16 +210,9 @@
 
   function renderModuleContent(module) {
     const groups = sortedGroups(module);
-    if (module.title === 'RAILIA 官网 UI/UX 设计') {
-      return `
-        <div class="module-panel">
-          ${renderRailiaUiCase(module)}
-        </div>
-      `;
-    }
-
+    const moduleClass = module.title === 'RAILIA 官网 UI/UX 设计' ? 'module-panel is-railia-ui-showcase' : 'module-panel';
     return `
-      <div class="module-panel">
+      <div class="${moduleClass}">
         ${groups.map((group) => `
           <section class="detail-group">
             <header class="detail-head">

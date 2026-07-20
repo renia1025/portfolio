@@ -673,116 +673,16 @@
         "title":  "RAILIA 官网 UI/UX 设计",
         "groups":  [
                        {
-                           "title":  "官网首页与详情页",
+                           "title":  "官网 UI/UX 设计",
                            "items":  [
                                          {
-                                             "title":  "详情页",
-                                             "src":  "railia-ui/1-website-home-detail-pages/detail-pages.png",
+                                             "title":  "官网桌面端详情页",
+                                             "src":  "详情页 (7).png",
                                              "type":  "image"
                                          },
                                          {
-                                             "title":  "移动端详情页",
-                                             "src":  "railia-ui/1-website-home-detail-pages/detail-pages-mobile.png",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "首页",
-                                             "src":  "railia-ui/1-website-home-detail-pages/home.png",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "移动端首页",
-                                             "src":  "optimized-assets/railia-ui/1-website-home-detail-pages/home-mobile.jpg",
-                                             "type":  "image"
-                                         }
-                                     ]
-                       },
-                       {
-                           "title":  "官网功能页面",
-                           "items":  [
-                                         {
-                                             "title":  "F1-1 海外支付",
-                                             "src":  "optimized-assets/railia-ui/2-website-functional-pages/f1-1-overseas-payment.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "H1-1 购物车",
-                                             "src":  "optimized-assets/railia-ui/2-website-functional-pages/h1-1-cart.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "问卷页面",
-                                             "src":  "railia-ui/2-website-functional-pages/questionnaire.png",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "Z2-4 联系我们中文页",
-                                             "src":  "optimized-assets/railia-ui/2-website-functional-pages/updated-z2-4-contact-us-cn.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "W1-1 订单详情",
-                                             "src":  "optimized-assets/railia-ui/2-website-functional-pages/w1-1-order-detail.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "W1-4 售后申请",
-                                             "src":  "optimized-assets/railia-ui/2-website-functional-pages/w1-4-after-sales-request.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "W1-6 待支付订单详情",
-                                             "src":  "optimized-assets/railia-ui/2-website-functional-pages/w1-6-unpaid-order-detail.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "X1-2-3 国内地址",
-                                             "src":  "railia-ui/2-website-functional-pages/x1-2-3-chinese-address.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "X1-2 海外地址",
-                                             "src":  "railia-ui/2-website-functional-pages/x1-2-overseas-address.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "X1-4 空订单",
-                                             "src":  "optimized-assets/railia-ui/2-website-functional-pages/x1-4-empty-order.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "Y1-1 登录注册",
-                                             "src":  "railia-ui/2-website-functional-pages/y1-1-login-register.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "Z2-1 关于 RAILIA",
-                                             "src":  "optimized-assets/railia-ui/2-website-functional-pages/z2-1-about-railia.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "Z2-1 关于 RAILIA 补充页",
-                                             "src":  "optimized-assets/railia-ui/2-website-functional-pages/z2-1-about-railia-1.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "Z2-1 RAILIA 品牌页",
-                                             "src":  "railia-ui/2-website-functional-pages/z2-1-railia.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "Z2-1 RAILIA 中文页",
-                                             "src":  "railia-ui/2-website-functional-pages/z2-1-railia-cn.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "Z2-4-2 新闻详情",
-                                             "src":  "railia-ui/2-website-functional-pages/z2-4-2-news-02.jpg",
-                                             "type":  "image"
-                                         },
-                                         {
-                                             "title":  "Z2-5 服务信息支持",
-                                             "src":  "optimized-assets/railia-ui/2-website-functional-pages/z2-5-service-info-support.jpg",
+                                             "title":  "官网移动端详情页",
+                                             "src":  "详情页 (8).png",
                                              "type":  "image"
                                          }
                                      ]
