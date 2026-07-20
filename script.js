@@ -256,7 +256,8 @@ function renderGallery() {
 
       if (panel) {
         const oldPanel = panel;
-        panel.remove();
+        oldPanel.classList.add('is-collapsing');
+        oldPanel.hidden = true;
         article.classList.remove('is-open');
         entry.setAttribute('aria-expanded', 'false');
         if (label) label.textContent = '展开';
@@ -264,12 +265,8 @@ function renderGallery() {
         runWhenIdle(() => {
           oldPanel.querySelectorAll('video').forEach((video) => {
             video.pause();
-            video.removeAttribute('src');
-            video.load();
           });
-          oldPanel.querySelectorAll('img').forEach((image) => {
-            image.removeAttribute('src');
-          });
+          oldPanel.remove();
         });
       } else {
         article.classList.add('is-open');
@@ -287,8 +284,8 @@ function renderGallery() {
           setupVideoPosters(panel);
           setupMediaSkeletons(panel);
         });
+        entry.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
-      entry.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       return;
     }
 

@@ -1892,7 +1892,7 @@ body::before {
 
 .detail-card.is-loading::after {
   opacity: 1;
-  animation: skeleton-shimmer 1.25s ease-in-out infinite;
+  animation: skeleton-shimmer 2.4s ease-in-out infinite;
 }
 
 .detail-card.is-loading img,
@@ -2541,6 +2541,11 @@ body::before {
 
 .module-panel {
   padding-top: clamp(34px, 3.4vw, 66px);
+}
+
+.module-panel.is-collapsing {
+  content-visibility: hidden;
+  contain: layout paint style;
 }
 
 .detail-group {
