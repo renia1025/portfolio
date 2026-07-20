@@ -256,18 +256,23 @@ function renderGallery() {
 
       if (panel) {
         const oldPanel = panel;
-        oldPanel.classList.add('is-collapsing');
-        oldPanel.hidden = true;
+        // 记录条目在文档中的自然位置：展开时头部是 sticky(top:0)，
+        // 收起前它贴在视口顶端，用它来锚定滚动，避免收起后页面高度骤减导致跳动。
+        const anchorTop = article.getBoundingClientRect().top + window.scrollY;
+        const shouldAnchor = window.scrollY > anchorTop;
+        // 同步暂停视频，立即停止解码，避免延迟到 idle 时才停造成卡顿。
+        oldPanel.querySelectorAll('video').forEach((video) => {
+          video.pause();
+        });
         article.classList.remove('is-open');
         entry.setAttribute('aria-expanded', 'false');
         if (label) label.textContent = '展开';
+        // 同步移除面板，让回流一次性完成、可预测，而不是拖到 idle 回调时才突然发生。
+        oldPanel.remove();
+        if (shouldAnchor) {
+          window.scrollTo({ top: Math.max(anchorTop - 12, 0) });
+        }
         window.dispatchEvent(new CustomEvent('portfolio:module-toggle'));
-        runWhenIdle(() => {
-          oldPanel.querySelectorAll('video').forEach((video) => {
-            video.pause();
-          });
-          oldPanel.remove();
-        });
       } else {
         article.classList.add('is-open');
         entry.setAttribute('aria-expanded', 'true');
